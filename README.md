@@ -1,4 +1,5 @@
 # HomeSage Real Estate API
+https://img.shields.io/badge/real_estate-api-%235177fc https://img.shields.io/badge/AI-%235177fc https://img.shields.io/badge/Docs-%235177fc 
 
 Homesage.ai Real Estate APIs provide powerful, AI-driven real estate API solutions for property data, home valuation, housing market analytics, real estate investment insights, and property listings. 
 
