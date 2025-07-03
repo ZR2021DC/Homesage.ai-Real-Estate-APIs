@@ -1,6 +1,10 @@
 # HomeSage Real Estate API
 
-Supercharge your real estate applications with the HomeSage API. Get instant access to comprehensive property data, financial analysis, and investment potential scores for millions of properties across the USA.
+Homesage.ai Real Estate APIs provide powerful, AI-driven real estate API solutions for property data, home valuation, housing market analytics, real estate investment insights, and property listings. 
+
+Our comprehensive real estate API platform enables investors, realtors, lenders and IT developers to access accurate property data, automate real estate workflows, and integrate advanced analytics into their applications. 
+
+Whether you need real estate market trends, home valuation tools, or property data APIs, Homesage.ai delivers secure, scalable, and easy-to-use solutions for the modern real estate industry.
 
 ## Key Features
 
