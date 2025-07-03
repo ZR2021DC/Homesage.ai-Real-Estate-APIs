@@ -1,6 +1,6 @@
 # HomeSage Real Estate API
-[![Real Estate API](https://img.shields.io/badge/real_estate-api-%235177fc)](https://github.com/ZR2021DC/Homesage.ai-Real-Estate-APIs/docs)
-[![Docs](https://img.shields.io/badge/Docs-%235177fc)](https://github.com/ZR2021DC/Homesage.ai-Real-Estate-APIs/docs)
+[![Real Estate API](https://img.shields.io/badge/real_estate-api-%235177fc)](https://github.com/ZR2021DC/Homesage.ai-Real-Estate-APIs/tree/main/examples)
+[![Docs](https://img.shields.io/badge/Docs-%235177fc)](https://github.com/ZR2021DC/Homesage.ai-Real-Estate-APIs/tree/main/docs)
 [![Website](https://img.shields.io/badge/Homesage.ai-%235177fc)](https://homesage.ai)
 [![Pricing](https://img.shields.io/badge/Pricing-%235177fc)](https://homesage.ai/pricing)
  
