@@ -1,70 +1,29 @@
-HomeSage.ai Real Estate API for Developers
-[![Real Estate API](https://img.shields.io/badge/real_estate-api-%235177fc/Homesage.ai-Real-Estate-AP](https://img.shields.io/b://github.com/ZR2021DC/Homesage.ai-Real-Estate-APIs/tree://img.shields.io/badge/Hcing](https://img.shields.io/b Unlock AI-Driven Real Estate Data & Analytics in Your Applications
+# HomeSage Real Estate API
+[![Real Estate API](https://img.shields.io/badge/real_estate-api-%235177fc)](https://github.com/ZR2021DC/Homesage.ai-Real-Estate-APIs/tree/main/examples)
+[![Docs](https://img.shields.io/badge/Docs-%235177fc)](https://github.com/ZR2021DC/Homesage.ai-Real-Estate-APIs/tree/main/docs)
+[![Website](https://img.shields.io/badge/Homesage.ai-%235177fc)](https://homesage.ai)
+[![Pricing](https://img.shields.io/badge/Pricing-%235177fc)](https://homesage.ai/pricing)Homesage.ai Real Estate APIs provide powerful, AI-driven real estate API solutions for property data, home valuation, housing market analytics, real estate investment insights, and property listings.Our comprehensive real estate API platform enables investors, realtors, lenders and IT developers to access accurate property data, automate real estate workflows, and integrate advanced analytics into their applications.Whether you need real estate market trends, home valuation tools, or property data APIs, Homesage.ai delivers secure, scalable, and easy-to-use solutions for the modern real estate industry.## Key Features
 
-HomeSage.ai Real Estate API delivers robust, developer-first access to nationwide property data, AI-powered home valuations, housing market analytics, and real estate investment tools. Designed for IT professionals, SaaS builders, PropTech startups, and enterprise development teams, our platform enables seamless API integration of accurate real estate data into web, mobile, and analytics solutions.
+Our API provides a rich set of data points and analyses to power your business, including:**Comprehensive Property Details:** Access address, property features, lot details, building information, property history, and school ratings.
+**Advanced Financial Analysis:**
+Flip & Renovation ROI calculations.
+Long-Term Rental value estimates (Cap Rate, Cash Flow, IRR).
+Short-Term Rental (e.g., Airbnb) profit projections.
+**Critical Investment Insights:**
+**PFS (Profit From Sale):** A proprietary score to estimate potential profit.
+**Investment Potential:** Categorizes properties from "Good" to "Excellent".
+**Property Condition:** AI-driven analysis of a property's condition from photos.
+**Market Comparables (Comps):** Retrieve a list of comparable properties with adjusted values.
+**Powerful Bulk Search:** Filter through millions of active and sold listings to find properties that match your exact criteria.
 
-Why Choose HomeSage.ai Real Estate API?
-Developer-Friendly: RESTful architecture, standardized endpoints, rich query/filter options, and clear docs.
+## Getting Started
 
-Comprehensive Coverage: Reliable property data across the U.S., including active and off-market listings.
+Follow these simple steps to integrate our powerful API into your application:**Explore the Documentation:** Dive into our detailed API documentation in the /docs directory to understand all the available endpoints and parameters.
+**Subscribe to a Plan:** Visit our website at **[https://homesage.ai](https://homesage.ai)** to choose a subscription plan that fits your needs.
+**Get Your API Key:** Once subscribed, you will receive your unique API key from your user dashboard. This key is required for all API requests.
+**Make Your First Call:** Use our code examples in the /examples directory to hit the ground running and make your first API call in minutes!
 
-AI & Analytics: Real-time home value estimates, profit projections, rental analytics, and market comps.
+## Ready to build?
 
-Secure & Scalable: Fast response times, secure authentication, and scalable for high-volume apps.
+Unlock the full potential of your real estate application today.**[Sign Up Now & Get Your API Key](httpshttps://homesage.ai)**
 
-Core Real Estate API Features
-Property Information & School Ratings: Instantly retrieve address, property features, building details, lot size, property history, and local school scores.
-
-Analytics & Investment Tools:
-
-Automated Valuation Model (AVM): Get accurate, up-to-date home values.
-
-ROI Calculators: Analyze flipping, renovation, long-term and short-term (Airbnb) rental potential.
-
-Investment Intelligence: Proprietary PFS (Profit From Sale) score and AI-driven investment categorization.
-
-Condition Analysis: Upload property photos for instant AI condition scoring.
-
-Market Comps: Request comparable sold/listed properties with value adjustments.
-
-Bulk Property Search: Filter millions of properties (active & sold) based on custom criteria—ideal for analytics and lead generation platforms.
-
-Quick Start for IT Developers
-Review API Docs: See the Docs for endpoints, parameters, filters, and real-world JSON responses.
-
-Choose a Plan: Visit homesage.ai/pricing to select your API subscription.
-
-Generate Your API Key: Sign up and instantly get your secure API token from your dashboard.
-
-Integrate in Minutes: Use practical code samples in Python, JavaScript, and more to make real API calls quickly.
-
-Example: Get Property Info (Python)
-python
-import requests
-
-url = "https://api.homesage.ai/v1/properties/lookup"
-headers = { "Authorization": "Bearer <YOUR_API_KEY>" }
-params = { "address": "123 Main St, Gaithersburg, MD" }
-
-response = requests.get(url, headers=headers, params=params)
-data = response.json()
-print(data)
-Build Modern Real Estate Apps with HomeSage.ai API
-Drive your next real estate project with:
-
-Fast, reliable API responses built for production.
-
-Rich data models for analysis, search, and integration.
-
-Developer support and clear upgrade paths for scaling.
-
-Sign Up and Start Building Now
-
-SEO Tips (Included for Optimization)
-Frequently used keywords: real estate API, property data API, home valuation API, real estate analytics, investment property API, real estate developer tools, PropTech API, market comps API.
-
-Write technical articles and tutorials linking to this repository for best SEO results.
-
-Use JSON code samples and endpoint references with keyword-rich comments.
-
-HomeSage.ai: Powering next-gen PropTech — trusted by developers, realtors, and investors for AI-powered property data & analytics APIs.
