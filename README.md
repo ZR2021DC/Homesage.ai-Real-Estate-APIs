@@ -15,7 +15,7 @@ We offer comprehensive solutions for property data, home valuation, market analy
 Key Features & Endpoints 
 Our APIs are built on a foundation of AI and Computer Vision, providing a rich set of data points and analyses to power your business. Explore our core features below, each with dedicated endpoints and parameters detailed in our documentation.
 
-🏠 Property Data APIs 
+🏠 Property Data APIs: 
 Access detailed property data points, including:
 
 Property Info: Address, property features, lot details, building information, school ratings and other.
@@ -24,7 +24,7 @@ Property History: Comprehensive sales history.
 
 AI-Powered Property Condition: Analyze a property's condition from images using our advanced AI models.
 
-💰 Investment & Valuation APIs 
+💰 Investment & Valuation APIs: 
 Leverage our AI to get a competitive edge in the market:
 
 Home Valuation (AVM): Get precise and up-to-date Automated Valuation Model (AVM) estimates.
@@ -35,7 +35,7 @@ Investment Insights: Our proprietary scores like PFS (Pice Flexibility Score) an
 
 Market Comparables (Comps): Instantly retrieve a list of comparable properties for a given property to improve your pricing and valuation strategies.
 
-📊 Market Analytics API 
+📊 Market Analytics API: 
 Go beyond single properties and analyze entire markets:
 
 Bulk Property Info: Filter millions of active and sold listings based on specific criteria to identify real estate trends and opportunities.
