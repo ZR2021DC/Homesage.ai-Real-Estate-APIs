@@ -1,63 +1,130 @@
+# Homesage.ai Real Estate APIs
 
-
-# HomeSage Real Estate API
-[![Real Estate API](https://img.shields.io/badge/real_estate-api-%235177fc)](https://github.com/ZR2021DC/Homesage.ai-Real-Estate-APIs/tree/main/examples)
-[![Docs](https://img.shields.io/badge/Docs-%235177fc)](https://github.com/ZR2021DC/Homesage.ai-Real-Estate-APIs/tree/main/docs)
-[![Website](https://img.shields.io/badge/Homesage.ai-%235177fc)](https://homesage.ai)
+[![API docs](https://img.shields.io/badge/API_docs-%235177fc)](https://app.homesage.ai/docs)
+[![MCP](https://img.shields.io/badge/MCP-%235177fc)](https://homesage.ai/products/real-estate-mcps/)
 [![Pricing](https://img.shields.io/badge/Pricing-%235177fc)](https://homesage.ai/pricing)
+[![Website](https://img.shields.io/badge/Homesage.ai-%235177fc)](https://homesage.ai)
 
+Property data, valuations and investment analysis for 155M+ US properties and 200B+ data points. Call 30+ REST endpoints from your own code, or connect the MCP to Claude, ChatGPT, Gemini or Cursor.
 
-*Welcome to the official GitHub repository for the Homesage.ai Real Estate APIs. This repository provides developers with the tools and resources needed to integrate our powerful, AI-driven real estate data platform into their applications.*
+- **Look up a property:** property record, estimated value, value history and condition score.
+- **Run the numbers:** comps, ARV, renovation cost, and flip and rental returns.
+- **Search an area:** filter a city, county or ZIP by price, condition, ROI and rent.
+- **Check the risk:** market outlook, location red flags, and mortgage and lien data.
+- **Reach the owner:** owner contacts and associated people for a property address.
 
-We offer comprehensive solutions for property data, home valuation, market analytics, comps, and investment insights. Our APIs are designed for seamless integration and scalability, empowering you to build innovative real estate applications.
+## Quickstart
 
+1. [Create an account](https://app.homesage.ai/signup) and choose a plan on the [pricing page](https://homesage.ai/pricing).
+2. Create an API key on the [Keys page](https://app.homesage.ai/api-portal/keys).
+3. Send the key in the `Authorization: Bearer` header:
 
-Key Features & Endpoints 
-Our APIs are built on a foundation of AI and Computer Vision, providing a rich set of data points and analyses to power your business. Explore our core features below, each with dedicated endpoints and parameters detailed in our documentation.
+```bash
+curl 'https://developers.homesage.ai/api/properties/info/?property_address=4411%20E%20Hidden%20Oak%20St%20Springfield%20MO%2065802' \
+  -H 'Authorization: Bearer YOUR_API_KEY'
+```
 
-🏠 Property Data APIs: 
-Access detailed property data points, including:
+The base URL is `https://developers.homesage.ai`. Every endpoint returns JSON.
 
-Property Info: Address, property features, lot details, building information, school ratings and other.
+## Code examples
 
-Property History: Comprehensive sales history.
+The [`examples`](./examples) folder has two flows in Python and JavaScript:
 
-AI-Powered Property Condition: Analyze a property's condition from images using our advanced AI models.
+| Flow | Python | JavaScript |
+| --- | --- | --- |
+| Look up one property | [`property_lookup.py`](./examples/python/property_lookup.py) | [`property_lookup.mjs`](./examples/javascript/property_lookup.mjs) |
+| Preview, then run an area search | [`search_properties.py`](./examples/python/search_properties.py) | [`search_properties.mjs`](./examples/javascript/search_properties.mjs) |
 
-💰 Investment & Valuation APIs: 
-Leverage our AI to get a competitive edge in the market:
+## MCP
 
-Home Valuation (AVM): Get precise and up-to-date Automated Valuation Model (AVM) estimates.
+The MCP puts the same data inside your AI assistant. Add this URL to the assistant, sign in once, and ask in plain words. You need no API key.
 
-Financial Analysis: Calculate ROI for flips and renovations, estimate long-term rental values (Cap Rate, Cash Flow, IRR), and project short-term rental profitability (e.g., Airbnb).
+```text
+https://api.homesage.ai/mcp
+```
 
-Investment Insights: Our proprietary scores like PFS (Pice Flexibility Score) and Investment Potential (categorized from "Good" to "Excellent") help you quickly identify properties with investment potential.
+**Claude (web or desktop)**
 
-Market Comparables (Comps): Instantly retrieve a list of comparable properties for a given property to improve your pricing and valuation strategies.
+1. Open Customize → Connectors.
+2. Click the "+", then "Add custom connector".
+3. Paste the URL, click Add, then Connect, and sign in.
 
-📊 Market Analytics API: 
-Go beyond single properties and analyze entire markets:
+On Team or Enterprise plans, an admin adds the connector once in organization settings first.
 
-Bulk Property Info: Filter millions of active and sold listings based on specific criteria to identify real estate trends and opportunities.
+**ChatGPT**
 
-Market Insights: Access aggregate data on pricing trends, inventory, and demand to inform your strategic decisions.
+1. Open Settings → Apps → Advanced and turn on Developer mode.
+2. Go to Settings → Connectors → Create.
+3. Paste the URL, name it, create it, and sign in when prompted.
 
+**Gemini CLI**
 
-Getting Started: A Developer's Quickstart Guide 
-Integrating the Homesage.ai APIs into your project is a straightforward process. Follow these four steps to start making API calls in minutes.
+```bash
+gemini mcp add --transport http homesage https://api.homesage.ai/mcp
+```
 
-  1. Explore the Documentation: Navigate to the /docs directory to view our comprehensive API documentation. Here, you'll find details on all available endpoints, request/response formats, and parameters.
+Run it, then approve the browser sign-in.
 
-  2. Subscribe to a Plan: Visit our website to choose a subscription plan that aligns with your project's needs. We offer flexible options for both hobbyists and enterprise-level applications.
+**Cursor and most other clients**
 
-  3. Get Your API Key: After subscribing, your unique API key will be available in your user dashboard. This key is essential for authenticating all your API requests.
+In Cursor, open Settings → Tools & Integrations → New MCP Server. Add the server to `mcp.json`:
 
-  4. Make Your First API Call: Use the code examples and guides in the /examples directory to quickly implement your first API call and see the data in action.
+```json
+{
+  "mcpServers": {
+    "homesage": {
+      "url": "https://api.homesage.ai/mcp"
+    }
+  }
+}
+```
 
+**VS Code (Copilot)**
 
-Why Choose Homesage.ai? 
-We provide secure, scalable, and easy-to-use APIs that empower you to build the next generation of proptech applications. Our focus on accurate property data, predictive analytics, and developer experience makes us the ideal partner for your real estate development needs.
+VS Code uses the same shape with a `servers` root key and a `type`:
 
-Unlock the full potential of your real estate application today.
+```json
+{
+  "servers": {
+    "homesage": {
+      "type": "http",
+      "url": "https://api.homesage.ai/mcp"
+    }
+  }
+}
+```
 
-[Sign Up Now & Get Your API Key](https://homesage.ai)
+Read more on the [MCP page](https://homesage.ai/products/real-estate-mcps/).
+
+## Endpoints
+
+The endpoints sit in 8 categories. The [endpoint index](./docs/README.md) lists each one with its credit price and a link to its live docs page.
+
+| Category | What it covers |
+| --- | --- |
+| [Property Search](https://app.homesage.ai/docs/property-search) | Area lookup, search preview and filtered search |
+| [Property Lookup](https://app.homesage.ai/docs/property-lookup) | Address suggestions and property records |
+| [Property Valuation](https://app.homesage.ai/docs/property-valuation) | Estimated value, scores, renovation, flip and rental returns |
+| [AI-Powered Analysis](https://app.homesage.ai/docs/ai-powered-analysis) | Full report, condition, comps, renovation breakdown and solar |
+| [Skip Tracing](https://app.homesage.ai/docs/skip-tracing) | Property owners and associated people |
+| [Risk & Diligence](https://app.homesage.ai/docs/risk-and-diligence) | Location red flags |
+| [Market Data](https://app.homesage.ai/docs/market-data) | Sold properties by ZIP, mortgage and lien data |
+| [Account](https://app.homesage.ai/docs/account) | Credit balance |
+
+## Credits and errors
+
+One credit balance covers the web app, Sage (our AI assistant), the APIs and the MCP. Each endpoint page shows its credit price.
+
+| Status | Meaning | Credits charged |
+| --- | --- | --- |
+| 401 | The API key is missing or invalid. | 0 |
+| 402 | The account has no active plan or not enough credits. | 0 |
+| 404 | The address has no confident match. The response lists close matches in `did_you_mean`. | 0 |
+
+## Docs for agents
+
+Every docs page has a Markdown version: add `.md` to its URL. The [OpenAPI spec](https://app.homesage.ai/openapi.json) and [`llms.txt`](https://app.homesage.ai/llms.txt) are public too.
+
+## Contact
+
+Questions? Email [contact@homesage.ai](mailto:contact@homesage.ai).
