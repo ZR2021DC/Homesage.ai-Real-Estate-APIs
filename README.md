@@ -8,10 +8,20 @@
 Property data, valuations and investment analysis for 160M+ US properties and 200B+ data points. Call 30+ REST endpoints from your own code, or connect the MCP to Claude, ChatGPT, Gemini or Cursor.
 
 - **Look up a property:** property record, estimated value, value history and condition score.
-- **Run the numbers:** comps, ARV, renovation cost, and flip and rental returns.
-- **Search an area:** filter a city, county or ZIP by price, condition, ROI and rent.
+- **Run the numbers:** comps, estimated ARV, estimated renovation cost, and estimated flip and rental returns.
+- **Search an area:** filter a city, county or ZIP by price, condition, estimated ROI and rent.
 - **Check the risk:** market outlook, location red flags, and mortgage and lien data.
-- **Reach the owner:** owner contacts and associated people for a property address.
+- **Identify the owner:** owner of record and associated people for a property address.
+
+## What teams build with Homesage.ai
+
+| Use case | Primary endpoints | Docs |
+| --- | --- | --- |
+| Property condition & rehab budgeting from photos | `GET /api/properties/property-condition/`, `GET /api/properties/renovation/cost/`, `POST /api/properties/renovation-cost-breakdown/` | [AI-Powered Analysis](https://app.homesage.ai/docs/ai-powered-analysis) |
+| Automated valuation (AVM), sold comps & estimated ARV | `GET /api/properties/current-estimate/`, `GET /api/properties/comps/`, `GET /api/properties/home_value_graph/` | [Property Valuation](https://app.homesage.ai/docs/property-valuation) |
+| Deal sourcing & filtered area search (city, county, ZIP) | `GET /api/area/autocomplete/`, `GET /api/workspace/search/count/`, `POST /api/workspace/search/` | [Property Search](https://app.homesage.ai/docs/property-search) |
+| Long-term & short-term rental yield and flip return modeling | `GET /api/properties/rental/long_term/`, `GET /api/properties/rental/short_term/`, `GET /api/properties/flip_return/` | [Property Valuation](https://app.homesage.ai/docs/property-valuation) |
+| Collateral, mortgage, lien & owner of record research | `GET /api/mortgage-lien/analysis/`, `POST /api/properties/skip-tracing/property-owner-information/` | [Market Data](https://app.homesage.ai/docs/market-data) |
 
 ## Quickstart
 
@@ -28,11 +38,12 @@ The base URL is `https://api.homesage.ai`. Every endpoint returns JSON.
 
 ## Code examples
 
-The [`examples`](./examples) folder has two flows in Python and JavaScript:
+The [`examples`](./examples) folder has three flows in Python and JavaScript:
 
 | Flow | Python | JavaScript |
 | --- | --- | --- |
 | Look up one property | [`property_lookup.py`](./examples/python/property_lookup.py) | [`property_lookup.mjs`](./examples/javascript/property_lookup.mjs) |
+| Score condition from photos and estimate renovation cost | [`condition_and_rehab.py`](./examples/python/condition_and_rehab.py) | [`condition_and_rehab.mjs`](./examples/javascript/condition_and_rehab.mjs) |
 | Preview, then run an area search | [`search_properties.py`](./examples/python/search_properties.py) | [`search_properties.mjs`](./examples/javascript/search_properties.mjs) |
 
 ## MCP

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-10-17/server.schema.json",
+  "name": "ai.homesage/mcp",
+  "title": "Homesage.ai MCP",
+  "description": "Estimated values, comps, rent, rehab costs and returns for 160M+ US properties, as 30+ agent tools.",
+  "version": "1.0.0",
+  "websiteUrl": "https://homesage.ai/products/real-estate-mcps/",
+  "repository": {
+    "url": "https://github.com/ZR2021DC/Homesage.ai-Real-Estate-APIs",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.homesage.ai/mcp"
+    }
+  ]
+}

@@ -27,7 +27,7 @@ All endpoints use the base URL `https://api.homesage.ai` and the `Authorization:
 | --- | --- | --- |
 | [Current estimated value](https://app.homesage.ai/docs/property-valuation/current-estimate) | `GET /api/properties/current-estimate/` | 2 |
 | [Value history](https://app.homesage.ai/docs/property-valuation/home-value-history) | `GET /api/properties/home_value_graph/` | 1 |
-| [Price Flexibility Score](https://app.homesage.ai/docs/property-valuation/price-flexibility-score) | `GET /api/properties/pfs/` | 2 |
+| [Price Flexibility Score (Seller Motivation)](https://app.homesage.ai/docs/property-valuation/price-flexibility-score) | `GET /api/properties/pfs/` | 2 |
 | [Investment potential](https://app.homesage.ai/docs/property-valuation/investment-potential) | `GET /api/properties/investment_potential/` | 3 |
 | [Needs TLC check](https://app.homesage.ai/docs/property-valuation/needs-tlc-check) | `GET /api/properties/tlc/` | 1 |
 | [Renovation cost](https://app.homesage.ai/docs/property-valuation/renovation-cost) | `GET /api/properties/renovation/cost/` | 5 |
@@ -44,7 +44,7 @@ All endpoints use the base URL `https://api.homesage.ai` and the `Authorization:
 | [Property condition](https://app.homesage.ai/docs/ai-powered-analysis/property-condition) | `GET /api/properties/property-condition/` | 2 |
 | [Property condition from your photos](https://app.homesage.ai/docs/ai-powered-analysis/property-condition-custom-photos) | `POST /api/properties/property-condition-custom-photos/` | 3 |
 | [Comparable sold properties](https://app.homesage.ai/docs/ai-powered-analysis/comps) | `GET /api/properties/comps/` | 5 |
-| [Room-by-room renovation breakdown](https://app.homesage.ai/docs/ai-powered-analysis/renovation-cost-breakdown) | `POST /api/properties/renovation-cost-breakdown/` | 5 |
+| [Line-item renovation cost breakdown](https://app.homesage.ai/docs/ai-powered-analysis/renovation-cost-breakdown) | `POST /api/properties/renovation-cost-breakdown/` | 5 |
 | [Square feet per floor](https://app.homesage.ai/docs/ai-powered-analysis/sqft-per-floor) | `GET /api/properties/sqft-per-floor/` | 1 |
 | [Market outlook](https://app.homesage.ai/docs/ai-powered-analysis/market-outlook) | `GET /api/properties/market-outlook/` | 2 |
 | [Solar analysis](https://app.homesage.ai/docs/ai-powered-analysis/solar-analysis) | `GET /api/solar/analysis/` | 4 |

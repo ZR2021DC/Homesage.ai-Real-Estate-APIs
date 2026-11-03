@@ -1,0 +1,8 @@
+{
+  "servers": {
+    "homesage": {
+      "type": "http",
+      "url": "https://api.homesage.ai/mcp"
+    }
+  }
+}
