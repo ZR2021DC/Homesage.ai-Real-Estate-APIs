@@ -1,77 +1,65 @@
-import requests
+"""Preview an area search, then run it with the Homesage.ai Real Estate APIs.
+
+The preview costs 0 credits. The search costs 1 credit per property returned,
+so it runs only when you pass --run.
+
+    pip install requests
+    export HOMESAGE_API_KEY=your_api_key
+    python search_properties.py
+    python search_properties.py --run
+"""
 import json
+import os
+import sys
 
-# --- Configuration ---
-# IMPORTANT: Replace with your actual API key from your subscription dashboard.
-API_KEY = "PASTE_YOUR_API_KEY_HERE"
-API_BASE_URL = "https://your-api-domain.com/api/properties"
+import requests
 
-def search_bulk_properties(filters):
-    """
-    Searches for properties in bulk using the HomeSage API.
+API_BASE_URL = "https://api.homesage.ai"
+FILTERS = {
+    "location": json.dumps([{"type": "city", "city": "Austin", "state_code": "TX"}]),
+    "property_status": "active",
+    "price_max": 500000,
+    "property_condition": "outdated|poor",
+}
 
-    Args:
-        filters (dict): A dictionary of query parameters to filter the search.
 
-    Returns:
-        list: A list of property data dictionaries if successful, otherwise None.
-    """
-    if API_KEY == "PASTE_YOUR_API_KEY_HERE":
-        print("Error: Please replace 'PASTE_YOUR_API_KEY_HERE' with your actual API key.")
-        return None
+def check(response):
+    if response.status_code == 401:
+        sys.exit("The API key is missing or invalid.")
+    if response.status_code == 402:
+        sys.exit("No active plan or not enough credits. See https://homesage.ai/pricing/")
+    response.raise_for_status()
+    return response.json()
 
-    headers = {
-        "Authorization": f"Bearer {API_KEY}"
-    }
 
-    endpoint = f"{API_BASE_URL}/bulk-property-info/"
+def main():
+    api_key = os.environ.get("HOMESAGE_API_KEY")
+    if not api_key:
+        sys.exit("Set HOMESAGE_API_KEY. Create a key at https://app.homesage.ai/api-portal/keys")
+    headers = {"Authorization": f"Bearer {api_key}"}
 
-    try:
-        print("Sending request to API...")
-        response = requests.get(endpoint, headers=headers, params=filters, timeout=30)
+    preview = check(requests.get(
+        f"{API_BASE_URL}/api/workspace/search/count/",
+        params=FILTERS,
+        headers=headers,
+        timeout=60,
+    ))
+    print(f"{preview['count']} properties match. The search costs {preview['cost']} credits.")
 
-        # Check for successful response
-        if response.status_code == 200:
-            return response.json()
-        else:
-            print(f"Error: API request failed with status code {response.status_code}")
-            print(f"Response: {response.text}")
-            return None
+    if "--run" not in sys.argv:
+        print("Pass --run to run the search.")
+        return
 
-    except requests.exceptions.RequestException as e:
-        print(f"An error occurred during the request: {e}")
-        return None
+    results = check(requests.post(
+        f"{API_BASE_URL}/api/workspace/search/",
+        json=FILTERS,
+        headers=headers,
+        timeout=300,
+    ))
+    print(f"Charged {results['charged']} credits. {results['credits_left']} credits left.")
+    for prop in results["data"][:5]:
+        print(prop["address"])
+
 
 if __name__ == "__main__":
-    # --- Example Usage ---
-    # Define your search criteria. You can customize these filters.
-    search_filters = {
-        "state": "TX",
-        "city": "Austin",
-        "price_range_min": 300000,
-        "price_range_max": 750000,
-        "beds_min": 3,
-        "property_type": "detached"
-    }
-
-    print(f"Searching for properties with filters: {json.dumps(search_filters, indent=2)}")
-    properties = search_bulk_properties(search_filters)
-
-    if properties:
-        print(f"\nSuccessfully found {len(properties)} properties.")
-        
-        # Print details for the first 5 properties found
-        for prop in properties[:5]:
-            address = prop.get('address', {})
-            full_address = f"{address.get('line', 'N/A')}, {address.get('city', 'N/A')}, {address.get('state_code', 'N/A')}"
-            list_price = prop.get('list_price', 'N/A')
-            print(f"  - Address: {full_address} | Price: ${list_price:,.0f}")
-        
-        if len(properties) > 5:
-            print(f"  ... and {len(properties) - 5} more.")
-
-        # To see all data for the first property:
-        # print("\nFull data for the first property found:")
-        # print(json.dumps(properties[0], indent=2))
-    else:
-        print("\nSearch did not return any properties or an error occurred.") 
+    main()
