@@ -2,7 +2,7 @@
 
 [![API docs](https://img.shields.io/badge/API_docs-%235177fc)](https://app.homesage.ai/docs)
 [![MCP](https://img.shields.io/badge/MCP-%235177fc)](https://homesage.ai/products/real-estate-mcps/)
-[![Pricing](https://img.shields.io/badge/Pricing-%235177fc)](https://homesage.ai/pricing)
+[![Pricing](https://img.shields.io/badge/Pricing-%235177fc)](https://homesage.ai/pricing/)
 [![Website](https://img.shields.io/badge/Homesage.ai-%235177fc)](https://homesage.ai)
 
 Property data, valuations and investment analysis for 160M+ US properties and 200B+ data points. Call 30+ REST endpoints from your own code, or connect the MCP to Claude, ChatGPT, Gemini or Cursor.
@@ -15,16 +15,16 @@ Property data, valuations and investment analysis for 160M+ US properties and 20
 
 ## Quickstart
 
-1. [Create an account](https://app.homesage.ai/signup) and choose a plan on the [pricing page](https://homesage.ai/pricing).
+1. [Create an account](https://app.homesage.ai/signup) and choose a plan on the [pricing page](https://homesage.ai/pricing/).
 2. Create an API key on the [Keys page](https://app.homesage.ai/api-portal/keys).
 3. Send the key in the `Authorization: Bearer` header:
 
 ```bash
-curl 'https://developers.homesage.ai/api/properties/info/?property_address=4411%20E%20Hidden%20Oak%20St%20Springfield%20MO%2065802' \
+curl 'https://api.homesage.ai/api/properties/info/?property_address=4411%20E%20Hidden%20Oak%20St%20Springfield%20MO%2065802' \
   -H 'Authorization: Bearer YOUR_API_KEY'
 ```
 
-The base URL is `https://developers.homesage.ai`. Every endpoint returns JSON.
+The base URL is `https://api.homesage.ai`. Every endpoint returns JSON.
 
 ## Code examples
 

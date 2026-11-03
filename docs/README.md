@@ -2,7 +2,7 @@
 
 This index lists each endpoint with its credit price. Each name links to its live docs page, which has parameters, response fields, a sample and errors.
 
-All endpoints use the base URL `https://developers.homesage.ai` and the `Authorization: Bearer YOUR_API_KEY` header.
+All endpoints use the base URL `https://api.homesage.ai` and the `Authorization: Bearer YOUR_API_KEY` header.
 
 ## [Property Search](https://app.homesage.ai/docs/property-search)
 
@@ -77,4 +77,4 @@ All endpoints use the base URL `https://developers.homesage.ai` and the `Authori
 | --- | --- | --- |
 | [Credit balance](https://app.homesage.ai/docs/account/credit-balance) | `GET /api/usage/credits/` | 0 |
 
-Prices can change. The live docs pages and the [pricing page](https://homesage.ai/pricing) always show the current price.
+Prices can change. The live docs pages and the [pricing page](https://homesage.ai/pricing/) always show the current price.

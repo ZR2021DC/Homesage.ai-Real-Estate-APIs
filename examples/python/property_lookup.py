@@ -11,7 +11,7 @@ import sys
 
 import requests
 
-API_BASE_URL = "https://developers.homesage.ai"
+API_BASE_URL = "https://api.homesage.ai"
 DEFAULT_ADDRESS = "4411 E Hidden Oak St Springfield MO 65802"
 
 
@@ -31,7 +31,7 @@ def main():
     if response.status_code == 401:
         sys.exit("The API key is missing or invalid.")
     if response.status_code == 402:
-        sys.exit("No active plan or not enough credits. See https://homesage.ai/pricing")
+        sys.exit("No active plan or not enough credits. See https://homesage.ai/pricing/")
     if response.status_code == 404:
         # A 404 costs 0 credits. Retry with one of the close matches.
         matches = response.json().get("did_you_mean", [])

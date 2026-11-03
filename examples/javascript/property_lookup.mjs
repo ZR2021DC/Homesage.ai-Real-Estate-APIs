@@ -5,7 +5,7 @@
 //   export HOMESAGE_API_KEY=your_api_key
 //   node property_lookup.mjs "4411 E Hidden Oak St Springfield MO 65802"
 
-const API_BASE_URL = 'https://developers.homesage.ai';
+const API_BASE_URL = 'https://api.homesage.ai';
 const DEFAULT_ADDRESS = '4411 E Hidden Oak St Springfield MO 65802';
 
 function fail(message) {
@@ -25,7 +25,7 @@ const response = await fetch(url, {
 });
 
 if (response.status === 401) fail('The API key is missing or invalid.');
-if (response.status === 402) fail('No active plan or not enough credits. See https://homesage.ai/pricing');
+if (response.status === 402) fail('No active plan or not enough credits. See https://homesage.ai/pricing/');
 if (response.status === 404) {
   // A 404 costs 0 credits. Retry with one of the close matches.
   const { did_you_mean: matches = [] } = await response.json();

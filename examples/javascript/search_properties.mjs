@@ -7,7 +7,7 @@
 //   node search_properties.mjs
 //   node search_properties.mjs --run
 
-const API_BASE_URL = 'https://developers.homesage.ai';
+const API_BASE_URL = 'https://api.homesage.ai';
 const FILTERS = {
   location: JSON.stringify([{ type: 'city', city: 'Austin', state_code: 'TX' }]),
   property_status: 'active',
@@ -22,7 +22,7 @@ function fail(message) {
 
 async function check(response) {
   if (response.status === 401) fail('The API key is missing or invalid.');
-  if (response.status === 402) fail('No active plan or not enough credits. See https://homesage.ai/pricing');
+  if (response.status === 402) fail('No active plan or not enough credits. See https://homesage.ai/pricing/');
   if (!response.ok) fail(`Request failed with status ${response.status}.`);
   return response.json();
 }
