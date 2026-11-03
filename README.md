@@ -105,7 +105,7 @@ VS Code uses the same shape with a `servers` root key and a `type`:
 }
 ```
 
-Read more on the [MCP page](https://homesage.ai/products/real-estate-mcps/).
+Read more on the [MCP page](https://homesage.ai/products/real-estate-mcps/). The MCP listing files, including `server.json`, live in [ZR2021DC/homesage-mcp](https://github.com/ZR2021DC/homesage-mcp).
 
 ## Endpoints
 
@@ -135,6 +135,10 @@ One credit balance covers the web app, Sage (our AI assistant), the APIs and the
 ## Docs for agents
 
 Every docs page has a Markdown version: add `.md` to its URL. The [OpenAPI spec](https://app.homesage.ai/openapi.json) and [`llms.txt`](https://app.homesage.ai/llms.txt) are public too.
+
+## License
+
+The MIT license covers the code in this repository. Data from the APIs and the MCP follows the [Terms of Service](https://homesage.ai/terms-of-service/): self-serve plans carry an Internal Use license for testing, prototyping and internal analysis.
 
 ## Contact
 

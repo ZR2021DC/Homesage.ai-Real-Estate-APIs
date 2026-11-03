@@ -43,7 +43,7 @@ def main():
     condition = get_json("/api/properties/property-condition/", address, api_key)
     rehab = get_json("/api/properties/renovation/cost/", address, api_key)
 
-    print("Condition:", condition.get("property_condition"))
+    print("Condition:", condition.get("Property Condition"))
     print("Estimated renovation cost:", rehab.get("renovation_cost"))
 
 

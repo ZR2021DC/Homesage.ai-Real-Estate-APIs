@@ -40,5 +40,5 @@ const address = process.argv[2] ?? DEFAULT_ADDRESS;
 const condition = await getJson('/api/properties/property-condition/', address, apiKey);
 const rehab = await getJson('/api/properties/renovation/cost/', address, apiKey);
 
-console.log('Condition:', condition.property_condition);
+console.log('Condition:', condition['Property Condition']);
 console.log('Estimated renovation cost:', rehab.renovation_cost);

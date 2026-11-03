@@ -27,7 +27,7 @@ All endpoints use the base URL `https://api.homesage.ai` and the `Authorization:
 | --- | --- | --- |
 | [Current estimated value](https://app.homesage.ai/docs/property-valuation/current-estimate) | `GET /api/properties/current-estimate/` | 2 |
 | [Value history](https://app.homesage.ai/docs/property-valuation/home-value-history) | `GET /api/properties/home_value_graph/` | 1 |
-| [Price Flexibility Score (Seller Motivation)](https://app.homesage.ai/docs/property-valuation/price-flexibility-score) | `GET /api/properties/pfs/` | 2 |
+| [Seller Motivation Score](https://app.homesage.ai/docs/property-valuation/price-flexibility-score) | `GET /api/properties/pfs/` | 2 |
 | [Investment potential](https://app.homesage.ai/docs/property-valuation/investment-potential) | `GET /api/properties/investment_potential/` | 3 |
 | [Needs TLC check](https://app.homesage.ai/docs/property-valuation/needs-tlc-check) | `GET /api/properties/tlc/` | 1 |
 | [Renovation cost](https://app.homesage.ai/docs/property-valuation/renovation-cost) | `GET /api/properties/renovation/cost/` | 5 |
