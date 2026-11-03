@@ -5,7 +5,7 @@
 [![Pricing](https://img.shields.io/badge/Pricing-%235177fc)](https://homesage.ai/pricing)
 [![Website](https://img.shields.io/badge/Homesage.ai-%235177fc)](https://homesage.ai)
 
-Property data, valuations and investment analysis for 155M+ US properties and 200B+ data points. Call 30+ REST endpoints from your own code, or connect the MCP to Claude, ChatGPT, Gemini or Cursor.
+Property data, valuations and investment analysis for 160M+ US properties and 200B+ data points. Call 30+ REST endpoints from your own code, or connect the MCP to Claude, ChatGPT, Gemini or Cursor.
 
 - **Look up a property:** property record, estimated value, value history and condition score.
 - **Run the numbers:** comps, ARV, renovation cost, and flip and rental returns.
